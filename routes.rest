@@ -1,0 +1,83 @@
+//LOCALHOST
+
+### Get All Courses
+GET http://localhost:3000/courses
+
+### Get Course by ID
+GET http://localhost:3000/courses/664113c1ec1955fb2529cd0a
+
+### Create Course
+POST http://localhost:3000/courses HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Mathematics",
+    "instructor": "Dr. Smith",
+    "description": "Introduction to calculus and algebra",
+    "schedule": "Mon/Wed/Fri 9:00 AM - 10:30 AM",
+    "location": "Room 201"
+}
+
+### Update Course
+PUT http://localhost:3000/courses/664113afec1955fb2529cd09 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Advanced Mathematics",
+    "instructor": "Dr. Smith",
+    "description": "Advanced topics in calculus and algebra",
+    "schedule": "Mon/Wed/Fri 9:00 AM - 11:00 AM",
+    "location": "Room 201"
+}
+
+### Delete Course
+DELETE http://localhost:3000/courses/664113afec1955fb2529cd09
+
+
+### Get All Students
+GET http://localhost:3000/students
+Content-Type: application/json
+
+###
+
+### Get Student by ID
+GET http://localhost:3000/students/66411340ec1955fb2529cd05
+Content-Type: application/json
+
+###
+
+### Create Student
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+    "name": "Benjamin Martinez",
+    "age": 22,
+    "email": "benjamin@example.com",
+    "major": "Engineering",
+    "year": "Senior",
+    "address": "456 Elm St, Townsville",
+    "phone": "555-987-6543"
+}
+
+###
+
+### Update Student
+PUT http://localhost:3000/students/60d5ec49f65d2c0015e6b9e2
+Content-Type: application/json
+
+{
+    "name": "Benjamin Martinez",
+    "age": 23,
+    "email": "benjamin_new@example.com",
+    "major": "Mechanical Engineering",
+    "year": "Senior",
+    "address": "456 Elm St, Townsville",
+    "phone": "555-987-6543"
+}
+
+###
+
+### Delete Student
+DELETE http://localhost:3000/students/60d5ec49f65d2c0015e6b9e2
+Content-Type: application/json
