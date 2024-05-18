@@ -8,21 +8,12 @@
   "host": "https://cse341-project2-0pjb.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
+
     "https"
     
   ],
   "paths": {
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
+    
     "/courses/": {
       "get": {
         "tags": [
