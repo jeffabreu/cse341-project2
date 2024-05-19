@@ -105,7 +105,7 @@ const createStudent = async (req, res) => {
   const deleteStudent = async (req, res) => {
     //#swagger.tags=['students']
       try {
-          const courseId = new ObjectId(String(req.params.id));
+          const studentId = new ObjectId(String(req.params.id));
           const response = await mongodb.getDatabase().db().collection('students').deleteOne({_id: studentId});
           if (response.deletedCount > 0) {
               res.status(204).send();
