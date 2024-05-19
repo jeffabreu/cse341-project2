@@ -1,6 +1,7 @@
 const express = require('express');
 const { validationResult } = require('express-validator');
 const router = express.Router();
+const { isAuthenticated } = require('../middleware/authentication');
 
 const studentsController = require('../controllers/students');
 const { studentValidators, idValidator } = require('../middleware/validators/students');
@@ -24,11 +25,11 @@ router.get('/', studentsController.getAll);
 
 router.get('/:id', idValidator, validate, studentsController.getSingle);
 
-router.post('/', studentValidators, validate, studentsController.createStudent);
+router.post('/', isAuthenticated, studentValidators, validate, studentsController.createStudent);
 
-router.put('/:id', idValidator.concat(studentValidators), validate, studentsController.updateStudent);
+router.put('/:id', isAuthenticated, idValidator.concat(studentValidators), validate, studentsController.updateStudent);
 
-router.delete('/:id', idValidator, validate, studentsController.deleteStudent);
+router.delete('/:id', isAuthenticated, idValidator, validate, studentsController.deleteStudent);
 
 // Apply error handling middleware
 router.use(errorHandler);
